@@ -103,7 +103,7 @@ public class NewsDaoImpl implements NewsDao {
         //获取数据库连接对象
         Connection conn = ConnectionManager.getConnection();
         //定义SQL字符串
-        String strSQL = "select * from news_data order by newsdate" ;
+        String strSQL = "select * from news_data order by newstime" ;
         try {
 
             // 创建语句对象
@@ -124,7 +124,7 @@ public class NewsDaoImpl implements NewsDao {
                 news.setId(rs.getInt("id"));
                 news.setNewsdate(rs.getTimestamp("newstime"));
                 news.setNewshead(rs.getString("headlines"));
-                news.setCount(rs.getInt("count"));
+                news.setCount(rs.getInt("n_count"));
                 news.setMaker(rs.getString("maker"));
                 news.setNewstype(rs.getString("type"));
                 news.setDetails(rs.getString("details"));
